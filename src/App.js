@@ -9,11 +9,25 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import { Toaster } from 'react-hot-toast';
+
 const App = () => {
   return (
     <div className='overflow-hidden'>
       <Router>
         <Header />
+         <Toaster 
+          position="top-right"
+          toastOptions={{
+            style: {
+              background: '#1F2937', // gris oscuro
+              color: '#fff',
+              fontWeight: 'bold',
+              borderRadius: '20px',
+              padding: '16px',
+            },
+          }}
+        />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/product/:id' element={<ProductDetails />} />

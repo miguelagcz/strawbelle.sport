@@ -23,11 +23,16 @@ const CartItem = ({ item }) => {
           <div className='flex justify-between mb-2'>
             {/* title */}
             <Link
-              to={`/product/${id}`}
-              className='text-sm uppercase font-medium max-w-[240px] text-primary hover:underline'
-            >
-              {title}
-            </Link>
+  to={`/product/${id}`}
+  className='text-accent hover:underline text-sm uppercase font-medium max-w-[240px]'
+>
+  {title}
+</Link>
+
+<div className="text-sm text-muted">
+  Talla: {item.size}
+</div>
+            
             {/* remove icon */}
             <div
               onClick={() => removeFromCart(id)}
@@ -47,9 +52,9 @@ const CartItem = ({ item }) => {
                 <IoMdRemove />
               </div>
               {/* amount */}
-              <div className='h-full flex justify-center items-center px-2'>
-                {amount}
-              </div>
+              <div className='h-full flex justify-center items-center px-2 text-accent font-medium'>
+  {amount}
+</div>
               {/* plus icon */}
               <div
                 onClick={() => increaseAmount(id)}
@@ -59,14 +64,16 @@ const CartItem = ({ item }) => {
               </div>
             </div>
             {/* item price */}
-            <div className='flex-1 flex items-center justify-around'>
-              $ {price}
-            </div>
+            {/* precio unitario */}
+<div className='flex-1 flex items-center justify-around text-accent'>
+  $ {price.toFixed(2)}
+</div>
             {/* final price */}
             {/* make the price at 2 decimals */}
-            <div className='flex-1 flex justify-end items-center text-primary font-medium'>{`$ ${parseFloat(
-              price * amount
-            ).toFixed(2)}`}</div>
+           {/* precio total */}
+<div className='flex-1 flex justify-end items-center text-accent font-medium'>
+  $ {(price * amount).toFixed(2)}
+</div>
           </div>
         </div>
       </div>

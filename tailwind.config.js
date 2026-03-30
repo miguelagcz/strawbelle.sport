@@ -18,11 +18,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#222222',
-        secondary: '#F5E6E0',
-      },
-      backgroundImage: {
-        hero: "url('./img/bg_hero.svg')",
+        primary: '#0A0A0A',
+        secondary: '#E50914',
+        secondaryHover: '#B20710',
+        accent: '#FFFFFF',
+        muted: '#A1A1AA',
+        border: '#1F1F1F',
+        surface: '#141414',
       },
     },
   },
