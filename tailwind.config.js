@@ -18,13 +18,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#0A0A0A',
-        secondary: '#E50914',
-        secondaryHover: '#B20710',
-        accent: '#FFFFFF',
+        primary: '#FFF5F5',
+        secondary: '#DB2777',
+        secondaryHover: '#F9A8D4',
+        accent: '#FFF5F5',
         muted: '#A1A1AA',
         border: '#1F1F1F',
-        surface: '#141414',
+        surface: '#F7E8E8',
       },
     },
   },

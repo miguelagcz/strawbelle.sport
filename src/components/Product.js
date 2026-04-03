@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsPlus, BsEyeFill, BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { CartContext } from '../contexts/CartContext';
+import toast from "react-hot-toast";
 
 const Product = ({ product }) => {
   const { addToCart } = useContext(CartContext);
@@ -25,77 +26,78 @@ const Product = ({ product }) => {
   };
 
   return (
-    <div className="text-accent">
-      <div className='border border-border bg-surface h-[320px] lg:h-[350px] mb-4 relative overflow-hidden group transition rounded-lg'>
-        
-        {/* IMAGE */}
-     <div className='w-full h-full flex justify-center items-center'>
-  <div className='w-[200px] mx-auto flex justify-center items-center relative'>
+<div className="text-border group">
+  <div className='relative overflow-hidden rounded-xl bg-surface'>
     
-    <img
-      className='max-h-[160px] group-hover:scale-110 transition duration-300'
-      src={images[index]}
-      alt=''
-    />
+    {/* IMAGE */}
+ <div className='w-full aspect-[3/4] overflow-hidden'>
+      
+      <img
+        src={images[index]}
+        alt=''
+        className='h-full object-contain transition duration-500 group-hover:scale-105'
+      />
 
-            {/* 🔥 BOTONES DE SLIDER */}
-            <button
-              onClick={prevImage}
-              className='absolute left-0 bg-black/50 text-white p-1 rounded'
-            >
-              <BsChevronLeft />
-            </button>
+      {/* SLIDER */}
+      <button
+        onClick={prevImage}
+        className='absolute left-2 opacity-0 group-hover:opacity-100 transition bg-black/40 text-white p-2 rounded-full'
+      >
+        <BsChevronLeft />
+      </button>
 
-            <button
-              onClick={nextImage}
-              className='absolute right-0 bg-black/50 text-white p-1 rounded'
-            >
-              <BsChevronRight />
-            </button>
+      <button
+        onClick={nextImage}
+        className='absolute right-2 opacity-0 group-hover:opacity-100 transition bg-black/40 text-white p-2 rounded-full'
+      >
+        <BsChevronRight />
+      </button>
 
-          </div>
-        </div>
+      {/* BOTONES HOVER */}
+      <div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 
+      opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 
+      transition-all duration-300'>
 
-        {/* botones lado derecho */}
-        <div  className='absolute top-6 right-5 p-2 flex flex-col gap-y-2 
-bg-black/30 md:bg-transparent 
-rounded-lg 
-opacity-100 md:opacity-0 md:group-hover:opacity-100 
-transition-all duration-300'>
-          
-          <button onClick={() => addToCart(product, id)}>
-            <div className='flex justify-center items-center text-white w-12 h-12 bg-secondary hover:bg-secondaryHover rounded-md transition'>
-              <BsPlus className='text-3xl' />
-            </div>
-          </button>
+     <button
+  onClick={() => {
+    addToCart(product, id);
 
-          <Link
-            to={`/product/${id}`}
-            className='w-12 h-12 md:w-10 md:h-10 bg-primary border border-border flex justify-center items-center text-accent rounded-md hover:bg-surface transition'
-          >
-            <BsEyeFill />
-          </Link>
+    toast.success("✨ Agregado al carrito 💖");
+  }}
+  className='bg-white text-black px-4 py-2 rounded-full text-sm hover:bg-pink-400 hover:text-white transition'
+>
+  Add
+</button>
 
-        </div>
-      </div>
-
-      {/* text */}
-      <div>
-        <div className='text-sm capitalize text-muted mb-1'>
-          {category}
-        </div>
-
-        <Link to={`/product/${id}`}>
-          <h2 className='font-semibold mb-1 hover:text-secondary transition'>
-            {title}
-          </h2>
+        <Link
+          to={`/product/${id}`}
+          className='bg-white/80 backdrop-blur px-4 py-2 rounded-full text-sm hover:bg-pink-400 hover:text-white transition'
+        >
+          View
         </Link>
 
-        <div className='font-semibold text-secondary'>
-          $ {price}
-        </div>
       </div>
     </div>
+
+  </div>
+
+  {/* TEXT */}
+  <div className='mt-3'>
+    <div className='text-xs text-muted uppercase tracking-wider'>
+      {category}
+    </div>
+
+    <Link to={`/product/${id}`}>
+      <h2 className='font-medium hover:text-secondaryHover transition'>
+        {title}
+      </h2>
+    </Link>
+
+    <div className='mt-1 font-semibold text-secondary'>
+      $ {price}
+    </div>
+  </div>
+</div>
   );
 };
 

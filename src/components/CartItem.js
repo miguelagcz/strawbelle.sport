@@ -24,7 +24,7 @@ const CartItem = ({ item }) => {
             {/* title */}
             <Link
   to={`/product/${id}`}
-  className='text-accent hover:underline text-sm uppercase font-medium max-w-[240px]'
+  className='text-border hover:underline text-sm uppercase font-medium max-w-[240px]'
 >
   {title}
 </Link>
@@ -38,7 +38,7 @@ const CartItem = ({ item }) => {
               onClick={() => removeFromCart(id)}
               className='text-xl cursor-pointer'
             >
-              <IoMdClose className='text-gray-500 hover:text-red-500 transition' />
+              <IoMdClose className='text-gray-500 hover:text-bg-secondary transition' />
             </div>
           </div>
           <div className='flex gap-x-2 h-[36px] text-sm'>
@@ -52,7 +52,7 @@ const CartItem = ({ item }) => {
                 <IoMdRemove />
               </div>
               {/* amount */}
-              <div className='h-full flex justify-center items-center px-2 text-accent font-medium'>
+              <div className='h-full flex justify-center items-center px-2 text-border font-medium'>
   {amount}
 </div>
               {/* plus icon */}
@@ -65,13 +65,13 @@ const CartItem = ({ item }) => {
             </div>
             {/* item price */}
             {/* precio unitario */}
-<div className='flex-1 flex items-center justify-around text-accent'>
+<div className='flex-1 flex items-center justify-around text-border'>
   $ {price.toFixed(2)}
 </div>
             {/* final price */}
             {/* make the price at 2 decimals */}
            {/* precio total */}
-<div className='flex-1 flex justify-end items-center text-accent font-medium'>
+<div className='flex-1 flex justify-end items-center text-border font-medium'>
   $ {(price * amount).toFixed(2)}
 </div>
           </div>

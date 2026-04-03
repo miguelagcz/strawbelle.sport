@@ -38,11 +38,11 @@ const Header = () => {
           className='cursor-pointer flex relative'
         >
           {/* icon */}
-          <BsBag className='text-2xl text-accent' />
+          <BsBag className='text-2xl text-border' />
 
           {/* badge: solo se muestra si itemAmount > 0 */}
           {itemAmount > 0 && (
-            <div className='bg-secondary absolute -right-2 -bottom-2 text-[11px] w-[20px] h-[20px] text-accent rounded-full flex justify-center items-center font-bold shadow-lg ring-2 ring-primary'>
+            <div className='bg-secondary absolute -right-2 -bottom-2 text-[11px] w-[20px] h-[20px] text-border rounded-full flex justify-center items-center font-bold shadow-lg ring-2 ring-primary'>
               {itemAmount}
             </div>
           )}

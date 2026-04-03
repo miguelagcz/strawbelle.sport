@@ -5,18 +5,18 @@ const Footer = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <footer className='bg-primary py-12 border-t border-border relative'>
+    <footer className='bg-primary py-5 border-t border-secondaryHover relative'>
       <div className='container mx-auto flex flex-col items-center gap-6'>
 
         {/* SOCIAL */}
         <div className='flex gap-6'>
           <a href="https://instagram.com/TU_CUENTA" target="_blank" rel="noreferrer"
-            className='text-white text-2xl hover:text-secondary transition hover:scale-110'>
+            className='text-border text-2xl hover:text-secondaryHover transition hover:scale-110'>
             <FaInstagram />
           </a>
 
           <a href="https://tiktok.com/@TU_CUENTA" target="_blank" rel="noreferrer"
-            className='text-white text-2xl hover:text-secondary transition hover:scale-110'>
+            className='text-border text-2xl hover:text-secondaryHover transition hover:scale-110'>
             <FaTiktok />
           </a>
         </div>
@@ -24,14 +24,14 @@ const Footer = () => {
         {/* BOTÓN MODAL */}
         <button
           onClick={() => setOpen(true)}
-          className='text-white text-sm border border-border px-4 py-2 rounded hover:bg-surface transition'
+          className='text-border text-sm border border-secondaryHover px-4 py-2 rounded hover:bg-secondaryHover transition'
         >
-          About FRØNX
+          About Strawbelle
         </button>
 
         {/* COPYRIGHT */}
-        <p className='text-white text-sm opacity-70'>
-          © {new Date().getFullYear()} FRØNX
+        <p className='text-border text-sm opacity-70'>
+          © {new Date().getFullYear()} Strawbelle GDL
         </p>
       </div>
 
@@ -44,31 +44,53 @@ const Footer = () => {
             {/* CERRAR */}
             <button
               onClick={() => setOpen(false)}
-              className='absolute top-3 right-3 text-white text-lg'
+              className='absolute top-3 right-3 text-border text-lg'
             >
               ✕
             </button>
 
-            <h2 className='text-xl font-semibold mb-4 text-white'>
-              Contacto FRØNX
+            <h2 className='text-xl font-semibold mb-4 text-border'>
+              Puntos de Entrega
             </h2>
 
-            <p className='text-muted mb-6'>
-              Disciplina sobre motivación.
-              Constancia sobre suerte. 
-              Fronx es para los que forjan su propio
-            camino con esfuerzo y dedicación. Si tú no te detienes, tu estilo tampoco debería hacerlo. Sigue constante, sigue Fronx.
+       <div className='text-muted mb-6 space-y-3 text-sm leading-relaxed'>
 
-            </p>
+  <p className='flex items-center gap-2 justify-center lg:justify-start'>
+    <span>🇲🇽✨</span>
+    <span>Envíos a toda la República Mexicana</span>
+    <span>✨🇲🇽</span>
+  </p>
+
+  <p className='flex items-start gap-2 justify-center lg:justify-start'>
+    <span>🍓</span>
+    <span>
+      Envíos por paquetería Casa Blanca <br />
+      <span className='text-xs text-muted'>
+        (Al lado de Fiesta Americana)
+      </span>
+    </span>
+  </p>
+
+  <p className='flex items-center gap-2 justify-center lg:justify-start'>
+    <span>🍓</span>
+    <span>Envíos por Uber 🚕</span>
+  </p>
+
+  <p className='flex items-center gap-2 justify-center lg:justify-start text-pink-400 font-medium'>
+    <span>🍓</span>
+    <span>No cambios ni devoluciones</span>
+  </p>
+
+</div>
 
             <div className='flex justify-center gap-6'>
               <a href="https://instagram.com/TU_CUENTA" target="_blank" rel="noreferrer"
-                className='text-white text-2xl hover:text-secondary transition'>
+                className='text-border text-2xl hover:text-secondaryHover transition'>
                 <FaInstagram />
               </a>
 
               <a href="https://tiktok.com/@TU_CUENTA" target="_blank" rel="noreferrer"
-                className='text-white text-2xl hover:text-secondary transition'>
+                className='text-border text-2xl hover:text-secondaryHover transition'>
                 <FaTiktok />
               </a>
             </div>
